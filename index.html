@@ -708,6 +708,19 @@
             border: 1px solid rgba(239, 68, 68, 0.3);
             color: #ef4444;
         }
+
+        /* Accessibilité - Masquer visuellement mais garder pour lecteurs d'écran */
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
@@ -774,41 +787,42 @@
         </section>
 
         <section id="services" class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">🤖</span>
-                <h3 class="service-title">Intelligence Artificielle & ML</h3>
+            <article class="service-card">
+                <span class="service-icon" aria-hidden="true">🤖</span>
+                <h3 class="service-title">Intelligence Artificielle & Machine Learning</h3>
                 <p class="service-description">
-                    Développement de modèles d'apprentissage automatique avec scikit-learn, TensorFlow et PyTorch. 
+                    Développement de modèles d'apprentissage automatique avec <strong>scikit-learn</strong>, <strong>TensorFlow</strong> et <strong>PyTorch</strong>. 
                     Solutions d'IA personnalisées pour la classification, prédiction et analyse prédictive.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <span class="service-icon">📊</span>
+            <article class="service-card">
+                <span class="service-icon" aria-hidden="true">📊</span>
                 <h3 class="service-title">Data Engineering & ETL</h3>
                 <p class="service-description">
-                    Conception et implémentation de pipelines de données robustes, ETL/ELT avec Pandas, Apache Airflow. 
+                    Conception et implémentation de pipelines de données robustes, <strong>ETL/ELT</strong> avec <strong>Pandas</strong>, <strong>Apache Airflow</strong>. 
                     Intégration de sources multiples et optimisation des performances.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <span class="service-icon">🌐</span>
+            <article class="service-card">
+                <span class="service-icon" aria-hidden="true">🌐</span>
                 <h3 class="service-title">Développement Web Python</h3>
                 <p class="service-description">
-                    Création d'applications web modernes avec Django, Flask et FastAPI. 
+                    Création d'applications web modernes avec <strong>Django</strong>, <strong>Flask</strong> et <strong>FastAPI</strong>. 
                     APIs REST performantes, authentification sécurisée et architecture microservices.
                 </p>
-            </div>
+            </article>
 
-            <div class="service-card">
-                <span class="service-icon">☁️</span>
+            <article class="service-card">
+                <span class="service-icon" aria-hidden="true">☁️</span>
                 <h3 class="service-title">Solutions Cloud & DevOps</h3>
                 <p class="service-description">
-                    Déploiement et orchestration d'applications sur AWS, Azure et GCP. 
-                    Conteneurisation avec Docker, CI/CD et infrastructure as code.
+                    Déploiement et orchestration d'applications sur <strong>AWS</strong>, <strong>Azure</strong> et <strong>GCP</strong>. 
+                    Conteneurisation avec <strong>Docker</strong>, CI/CD et infrastructure as code.
                 </p>
-            </div>
+            </article>
+        </div>
         </section>
 
         <section id="portfolio" class="portfolio-section">
@@ -828,7 +842,7 @@
                         <div class="portfolio-category">Web App</div>
                         <h4 class="portfolio-title-item">Application Data </h4>
                         <p class="portfolio-description">
-                            VProjet à venir. 
+                            Projet à venir. 
                         </p>
                         <div class="portfolio-tech">
                             <span class="tech-tag">Python</span>
@@ -975,12 +989,14 @@
         </section>
     </main>
 
-    <footer class="container">
-        <p>&copy; 2025 Koudous Ibouraima. Développeur Python & Data Engineer.</p>
-        <p style="margin-top: 0.5rem; color: #64748b;">
-            📧 koudous.ibouraima@gmail.com | 💼 
-            <a href="https://www.linkedin.com/in/koudous-ibouraima-758376120/" target="_blank" style="color: #3b82f6;">LinkedIn</a>
-        </p>
+    <footer role="contentinfo" class="container">
+        <div>
+            <p>&copy; 2025 <strong>Koudous Ibouraima</strong>. Développeur Python & Data Engineer.</p>
+            <address style="margin-top: 0.5rem; color: #64748b; font-style: normal;">
+                📧 <a href="mailto:koudous.ibouraima@gmail.com" style="color: #3b82f6;">koudous.ibouraima@gmail.com</a> | 
+                💼 <a href="https://www.linkedin.com/in/koudous-ibouraima-758376120/" target="_blank" rel="noopener noreferrer" style="color: #3b82f6;">LinkedIn</a>
+            </address>
+        </div>
     </footer>
 
     <script>
