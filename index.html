@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koudous Ibouraima | Développeur Full-stack & Data Engineer </title>
+    <meta name="description" content="Koudous Ibouraima - Expert en développement Python et ingénierie des données. Solutions IA, applications web et pipelines de données.">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+            opacity: 0.1;
+            animation: gradient-shift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { transform: translateX(-50px) rotate(0deg); }
+            50% { transform: translateX(50px) rotate(2deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3)); }
+            to { filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6)); }
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .python-icon {
+            display: inline-block;
+            font-size: 2rem;
+            color: #3776ab;
+            margin: 0 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .hero-section {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #f1f5f9;
+            text-align: center;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: rgba(51, 65, 85, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+
+        .service-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .contact-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #f1f5f9;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(51, 65, 85, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Security Badge */
+        .security-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .tech-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #f1f5f9;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            transform: scale(1.1);
+        }
+
+        .tech-item span {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-item p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+        }
+
+        /* LinkedIn Link */
+        .social-links {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #0077b5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .linkedin-btn:hover {
+            background: #005582;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section, .contact-section {
+                padding: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Particles animation */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #3b82f6;
+            border-radius: 50%;
+            animation: particle-float 6s linear infinite;
+        }
+
+        @keyframes particle-float {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(90vh) scale(1);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(10vh) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .portfolio-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #f1f5f9;
+        }
+
+        .portfolio-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(51, 65, 85, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 8px;
+            color: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: rgba(51, 65, 85, 0.4);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-title-item {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #f1f5f9;
+        }
+
+        .portfolio-description {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .portfolio-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .portfolio-link {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .portfolio-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .portfolio-link.demo {
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+        }
+
+        .portfolio-link.article {
+            background: linear-gradient(45deg, #f59e0b, #d97706);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .placeholder-text {
+            text-align: center;
+            color: #94a3b8;
+            font-style: italic;
+            padding: 2rem;
+            border: 2px dashed rgba(148, 163, 184, 0.2);
+            border-radius: 10px;
+        }
+
+        /* Alert Messages */
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            display: none;
+        }
+
+        .alert-success {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <div class="header-bg"></div>
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Koudous Ibouraima</h1>
+                <p class="tagline">Développeur Full-stack & Data Engineer </p>
+                <div>
+                    <span class="python-icon">🐍</span>
+                    <span class="python-icon">📊</span>
+                    <span class="python-icon">⚡</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#technologies" class="nav-link">Technologies</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="hero-section">
+            <h2 class="hero-title">Développeur passionné & Spécialiste en Data Engineering</h2>
+            <p class="hero-description">
+                
+               Bonjour ! Je suis Koudous Ibouraima, développeur Python et ingénieur de données avec une solide expertise dans la création de solutions technologiques 
+               innovantes. Ma passion pour le code et l'analyse de données me permet de transformer vos idées en applications performantes et vos données en insights 
+               précieux. De la conception d'APIs robustes à la mise en place de pipelines de données complexes, je vous accompagne dans tous vos projets technologiques.
+
+                J'ai travaillé sur une variété de projets allant de l'intelligence artificielle à l'ingénierie des données, en passant par le développement web. 
+                Mon objectif est de fournir des solutions sur mesure qui répondent à vos besoins spécifiques et dépassent vos attentes.
+            </p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/koudous-ibouraima-758376120/" target="_blank" class="linkedin-btn">
+                    <span>💼</span>
+                    Voir mon profil LinkedIn
+                </a>
+            </div>
+        </section>
+
+        <section id="services" class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🤖</span>
+                <h3 class="service-title">Intelligence Artificielle & ML</h3>
+                <p class="service-description">
+                    Développement de modèles d'apprentissage automatique avec scikit-learn, TensorFlow et PyTorch. 
+                    Solutions d'IA personnalisées pour la classification, prédiction et analyse prédictive.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">📊</span>
+                <h3 class="service-title">Data Engineering & ETL</h3>
+                <p class="service-description">
+                    Conception et implémentation de pipelines de données robustes, ETL/ELT avec Pandas, Apache Airflow. 
+                    Intégration de sources multiples et optimisation des performances.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🌐</span>
+                <h3 class="service-title">Développement Web Python</h3>
+                <p class="service-description">
+                    Création d'applications web modernes avec Django, Flask et FastAPI. 
+                    APIs REST performantes, authentification sécurisée et architecture microservices.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">☁️</span>
+                <h3 class="service-title">Solutions Cloud & DevOps</h3>
+                <p class="service-description">
+                    Déploiement et orchestration d'applications sur AWS, Azure et GCP. 
+                    Conteneurisation avec Docker, CI/CD et infrastructure as code.
+                </p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio-section">
+            <h3 class="portfolio-title">Portfolio & Réalisations</h3>
+            
+            <div class="portfolio-tabs">
+                <button class="tab-btn active" data-tab="apps">Applications</button>
+                <button class="tab-btn" data-tab="articles">Articles & Blog</button>
+                <button class="tab-btn" data-tab="projects">Projets Open Source</button>
+            </div>
+
+            <!-- Applications Tab -->
+            <div class="tab-content active" id="apps">
+                <div class="portfolio-grid">
+                    <!-- Placeholder pour vos applications -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-category">Web App</div>
+                        <h4 class="portfolio-title-item">Application de Data </h4>
+                        <p class="portfolio-description">
+                            VProjet à venir. 
+                        </p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link demo">
+                                <span>🚀</span> Voir la démo
+                            </a>
+                            <a href="#" class="portfolio-link">
+                                <span>💻</span> Code source
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="placeholder-text">
+                        <p>🔧 <strong>Applications</strong></p>
+                        <p>Projet in progress...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Articles Tab -->
+            <div class="tab-content" id="articles">
+                <div class="portfolio-grid">
+                    <!-- Placeholder pour vos articles -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-category">Tutorial</div>
+                        <h4 class="portfolio-title-item">Guide complet : Pipeline ML avec Python</h4>
+                        <p class="portfolio-description">
+                            Article À venir.
+                        </p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Machine Learning</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="#" class="portfolio-link article">
+                                <span>📖</span> Lire l'article
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="placeholder-text">
+                        <p>✍️ <strong>Espace réservé pour vos articles</strong></p>
+                        <p>Article à venir</p>
+                        <p>Article à venir</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Source Projects Tab -->
+             
+        <section id="technologies" class="tech-stack">
+            <h3 class="tech-title">Stack Technique</h3>
+            <div class="tech-icons">
+                <div class="tech-item">
+                    <span>🐍</span>
+                    <p>Python</p>
+                </div>
+                <div class="tech-item">
+                    <span>📊</span>
+                    <p>Pandas/NumPy</p>
+                </div>
+                <div class="tech-item">
+                    <span>🧠</span>
+                    <p>TensorFlow</p>
+                </div>
+                <div class="tech-item">
+                    <span>🌐</span>
+                    <p>Django/Flask</p>
+                </div>
+                <div class="tech-item">
+                    <span>🚀</span>
+                    <p>FastAPI</p>
+                </div>
+                <div class="tech-item">
+                    <span>🗄️</span>
+                    <p>PostgreSQL</p>
+                </div>
+                <div class="tech-item">
+                    <span>☁️</span>
+                    <p>AWS/Azure</p>
+                </div>
+                <div class="tech-item">
+                    <span>🐳</span>
+                    <p>Docker</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h3 class="contact-title">Contactez-moi</h3>
+            <p style="text-align: center; color: #cbd5e1; margin-bottom: 2rem;">
+                Vous avez un projet en tête ? Discutons de vos besoins et créons quelque chose d'exceptionnel ensemble !
+            </p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="alert alert-success" id="successAlert">
+                    ✅ Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.
+                </div>
+                <div class="alert alert-error" id="errorAlert">
+                    ❌ Une erreur s'est produite. Veuillez réessayer ou me contacter directement à koudous.ibouraima@gmail.com
+                </div>
+                
+                <div class="form-group">
+                    <label for="name" class="form-label">Nom complet *</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company" class="form-label">Entreprise</label>
+                    <input type="text" id="company" name="company" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject" class="form-label">Sujet *</label>
+                    <input type="text" id="subject" name="subject" class="form-input" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">Message *</label>
+                    <textarea id="message" name="message" class="form-textarea" required 
+                        placeholder="Décrivez votre projet, vos besoins techniques, timeline, budget approximatif..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    Envoyer le message
+                </button>
+                
+                <div class="security-badge">
+                    <span>🔒</span>
+                    <span>Formulaire sécurisé - Vos données sont protégées</span>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2025 Koudous Ibouraima. Développeur Python & Data Engineer.</p>
+        <p style="margin-top: 0.5rem; color: #64748b;">
+            📧 koudous.ibouraima@gmail.com | 💼 
+            <a href="https://www.linkedin.com/in/koudous-ibouraima-758376120/" target="_blank" style="color: #3b82f6;">LinkedIn</a>
+        </p>
+    </footer>
+
+    <script>
+        // Protection contre les bots - Simple honeypot et rate limiting
+        let formSubmissions = 0;
+        const maxSubmissions = 3;
+        const timeWindow = 300000; // 5 minutes
+
+        // Configuration EmailJS - REMPLACEZ CES VALEURS PAR LES VÔTRES
+        const EMAILJS_CONFIG = {
+            PUBLIC_KEY: 'xJHXctPO5jxf0iEuJ',     //  Public Key
+            SERVICE_ID: 'service_cc3lrkn',     // Service ID  
+            TEMPLATE_ID: 'template_26cc1c7'    // Template ID
+        };
+
+        // Initialisation d'EmailJS
+        function initEmailJS() {
+            if (EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+                emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+            }
+        }
+
+        // Création des particules animées
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Gestion du formulaire de contact
+        function initContactForm() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successAlert = document.getElementById('successAlert');
+            const errorAlert = document.getElementById('errorAlert');
+
+            // Ajouter un champ honeypot invisible pour les bots
+            const honeypot = document.createElement('input');
+            honeypot.type = 'text';
+            honeypot.name = 'website';
+            honeypot.style.display = 'none';
+            honeypot.tabIndex = -1;
+            honeypot.autocomplete = 'off';
+            form.appendChild(honeypot);
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Cacher les alertes précédentes
+                successAlert.style.display = 'none';
+                errorAlert.style.display = 'none';
+                
+                // Vérifications de sécurité
+                if (honeypot.value !== '') {
+                    console.log('Bot détecté - honeypot rempli');
+                    return;
+                }
+                
+                if (formSubmissions >= maxSubmissions) {
+                    showError('Trop de tentatives. Veuillez attendre quelques minutes.');
+                    return;
+                }
+                
+                // Validation des champs
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+                
+                if (!validateForm(data)) {
+                    return;
+                }
+                
+                // Disable button during submission
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Envoi en cours...';
+                
+                try {
+                    // Envoi de l'email via EmailJS
+                    await sendEmail(data);
+                    
+                    formSubmissions++;
+                    setTimeout(() => formSubmissions--, timeWindow);
+                    
+                    showSuccess();
+                    form.reset();
+                    
+                } catch (error) {
+                    showError('Erreur lors de l\'envoi. Veuillez réessayer.');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer le message';
+                }
+            });
+            
+            function validateForm(data) {
+                // Validation basique
+                if (!data.name || !data.email || !data.subject || !data.message) {
+                    showError('Veuillez remplir tous les champs obligatoires.');
+                    return false;
+                }
+                
+                // Validation email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(data.email)) {
+                    showError('Veuillez entrer une adresse email valide.');
+                    return false;
+                }
+                
+                // Vérification de longueur pour éviter le spam
+                if (data.message.length < 10 || data.message.length > 2000) {
+                    showError('Le message doit contenir entre 10 et 2000 caractères.');
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            function showSuccess() {
+                successAlert.style.display = 'block';
+                successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            function showError(message) {
+                errorAlert.textContent = '❌ ' + message;
+                errorAlert.style.display = 'block';
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            // Envoi d'email avec EmailJS
+            async function sendEmail(data) {
+                if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+                    // Mode simulation si pas encore configuré
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            console.log('Mode simulation - Configurez EmailJS avec vos vraies clés');
+                            console.log('Données à envoyer:', data);
+                            resolve();
+                        }, 1000);
+                    });
+                }
+
+                // Envoi réel avec EmailJS
+                try {
+                    const templateParams = {
+                        from_name: data.name,
+                        from_email: data.email,
+                        company: data.company || 'Non spécifiée',
+                        subject: data.subject,
+                        message: data.message,
+                        to_name: 'Koudous Ibouraima',
+                        to_email: 'koudous.ibouraima@gmail.com',
+                        reply_to: data.email
+                    };
+                    
+                    console.log('Données envoyées à EmailJS:', templateParams);
+                    
+                    const response = await emailjs.send(
+                        EMAILJS_CONFIG.SERVICE_ID,
+                        EMAILJS_CONFIG.TEMPLATE_ID,
+                        templateParams
+                    );
+                    
+                    console.log('Email envoyé avec succès:', response);
+                    return response;
+                } catch (error) {
+                    console.error('Erreur EmailJS:', error);
+                    throw error;
+                }
+            }
+        }
+
+        // Gestion des onglets du portfolio
+        function initPortfolioTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Retirer la classe active de tous les boutons et contenus
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Ajouter la classe active au bouton cliqué
+                    btn.classList.add('active');
+
+                    // Afficher le contenu correspondant
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+        function addInteractivity() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(59, 130, 246, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.background = 'rgba(51, 65, 85, 0.3)';
+                });
+            });
+        }
+
+        // Smooth scroll pour la navigation
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialisation au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            initEmailJS();
+            createParticles();
+            addInteractivity();
+            initSmoothScroll();
+            initContactForm();
+            initPortfolioTabs();
+        });
+
+        // Effet parallax léger
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.header-bg');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
