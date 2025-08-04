@@ -993,19 +993,18 @@
         <div>
             <p>&copy; 2025 <strong>Koudous Ibouraima</strong>. Développeur Python & Data Engineer.</p>
             <address style="margin-top: 0.5rem; color: #64748b; font-style: normal;">
-                📧 <a href="mailto:koudous.ibouraima@gmail.com" style="color: #3b82f6;">koudous.ibouraima@gmail.com</a> | 
                 💼 <a href="https://www.linkedin.com/in/koudous-ibouraima-758376120/" target="_blank" rel="noopener noreferrer" style="color: #3b82f6;">LinkedIn</a>
             </address>
         </div>
     </footer>
 
     <script>
-        // Protection contre les bots - Simple honeypot et rate limiting
+        //  stop bots - Limite de soumissions
         let formSubmissions = 0;
         const maxSubmissions = 3;
         const timeWindow = 300000; // 5 minutes
 
-        // Configuration EmailJS - REMPLACEZ CES VALEURS PAR LES VÔTRES
+        // Configuration EmailJS 
         const EMAILJS_CONFIG = {
             PUBLIC_KEY: 'xJHXctPO5jxf0iEuJ',     //  Public Key
             SERVICE_ID: 'service_cc3lrkn',     // Service ID  
